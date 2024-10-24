@@ -71,7 +71,7 @@ public class UserService {
 	}
 
 	public Collection<UserDto> getUserByName(String name) {
-		return modelsToDtos(userRepository.findByName(name));
+		return modelsToDtos(userRepository.findByNameLikeOrEmailLike("%"+name+"%", "%"+name+"%"));
 	}
 
 	public boolean deleteUser(long id) {

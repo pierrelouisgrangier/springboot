@@ -63,7 +63,18 @@ public class UserController {
 		userDto.setEmail("toto@test.fr");
 		userDto.setName("Toto");
 		userService.createUser(userDto);
-		
+		userDto = new UserDto();
+		userDto.setEmail("titi@test.fr");
+		userDto.setName("Titi");
+		userService.createUser(userDto);
+		userDto = new UserDto();
+		userDto.setEmail("tata@test.fr");
+		userDto.setName("Tata");
+		userService.createUser(userDto);
+		userDto = new UserDto();
+		userDto.setEmail("tutu@test.fr");
+		userDto.setName("Tutu");
+		userService.createUser(userDto);
 	}
 
 }

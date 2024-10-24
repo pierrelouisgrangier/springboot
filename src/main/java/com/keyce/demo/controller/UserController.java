@@ -37,6 +37,11 @@ public class UserController {
 		return userService.getUser(id);
 	}
 	
+	@GetMapping("/name/{name}")
+	public Collection<UserDto> getUserByName(@PathVariable("name") String name) {
+		return userService.getUserByName(name);
+	}
+	
 	@DeleteMapping("/{id}")
 	public boolean deleteUser(@PathVariable("id") long id) {
 		return userService.deleteUser(id);

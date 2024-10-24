@@ -64,6 +64,10 @@ public class UserService {
 		return modelToDto(userRepository.findById(id).get());
 	}
 
+	public Collection<UserDto> getUserByName(String name) {
+		return modelsToDtos(userRepository.findByName(name));
+	}
+
 	public boolean deleteUser(long id) {
 		userRepository.deleteById(id);
 		return true;

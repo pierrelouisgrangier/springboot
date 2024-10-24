@@ -7,8 +7,9 @@
 
 <body>
 	<h1 th:text="${message}">Message par défaut</h1>
-	<div><a href="./user/populate">Populer</div>
-	<div><a href="./user">Liste des utilisateurs</div>
+	<ul >
+		<li th:each="user : ${users}" th:text="${user.name}" >default</li>
+	</ul>
 </body>
 
 </html>

@@ -2,6 +2,7 @@ package com.keyce.demo.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -30,6 +31,7 @@ public class UserServiceTest {
 		assertEquals("toto@test.fr", userdto.getEmail());
 		assertEquals("toto", userdto.getName());
 		assertEquals(1, userdto.getId());
-
+		when(userRepository.findById(2l)).thenReturn(Optional.empty());
+		assertNull( userService.getUser(2l));
 	}
 }

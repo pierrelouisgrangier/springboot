@@ -2,6 +2,7 @@ package com.keyce.demo.service;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -61,7 +62,12 @@ public class UserService {
 	}
 
 	public UserDto getUser(long id) {
-		return modelToDto(userRepository.findById(id).get());
+		Optional<UserModel> userModel = userRepository.findById(id);
+		if(userModel.isPresent()) {
+			return modelToDto(userModel.get());	
+		}
+		return null;
+		
 	}
 
 	public Collection<UserDto> getUserByName(String name) {
